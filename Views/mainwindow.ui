@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>703</width>
+    <height>569</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lavandaria Lavemax</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Resources/resources.qrc">
+    <normaloff>:/icons/logo.png</normaloff>:/icons/logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>0</number>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QFrame" name="frame">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">.QFrame {
+	background-color: #ececec;
+	border-right: 2px solid #bfbfbf;
+}</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>182</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="../Resources/resources.qrc">:/icons/logo.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #d1d1d1;
+border: 2px solid #adadad;
+border-radius: 2px;
+padding: 4px;</string>
+          </property>
+          <property name="text">
+           <string>LAVEMAX</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="GreetingsLabel">
+          <property name="styleSheet">
+           <string notr="true">background-color: #d1d1d1;
+border: 2px solid #adadad;
+border-radius: 2px;
+padding: 4px;</string>
+          </property>
+          <property name="text">
+           <string>Benvindo(a) &lt;Nome Do Usuário&gt;.</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QFrame" name="frame_2">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <property name="styleSheet">
+           <string notr="true">.QWidget {
+	background-color: qlineargradient(spread:pad, x1:0, y1:0.051, x2:0, y2:0.545, stop:0 rgba(236, 236, 236, 255), stop:1 rgba(218, 218, 218, 255));
+}</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QComboBox" name="SearchCriteriaComboBox">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>25</height>
+              </size>
+             </property>
+             <item>
+              <property name="text">
+               <string>Procurar por telemóvel</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Procurar por nº da fatura</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Procurar por nome do cliente</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="SearchEntry">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>300</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>25</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="maxLength">
+              <number>50</number>
+             </property>
+             <property name="placeholderText">
+              <string>Procure faturas escrevendo aqui</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="Line" name="line_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="ReceiptTableView">
+          <property name="styleSheet">
+           <string notr="true">QTableView {
+	border: no-border;
+	background: url(:/icons/logo.png) no-repeat center;
+	background-attachment: fixed;
+}</string>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="verticalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <property name="horizontalScrollMode">
+           <enum>QAbstractItemView::ScrollPerPixel</enum>
+          </property>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>70</width>
+     <height>70</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="NewEntryAction"/>
+   <addaction name="VisualizeEntryAction"/>
+   <addaction name="separator"/>
+   <addaction name="ManageClientsAction"/>
+   <addaction name="ManageUsersAction"/>
+   <addaction name="separator"/>
+   <addaction name="TodayFinancialReportAction"/>
+   <addaction name="VisualizeEarningsAction"/>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>703</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEntry">
+    <property name="title">
+     <string>Faturas</string>
+    </property>
+    <addaction name="actionNova_Entrada"/>
+    <addaction name="actionVisualizar_Entrada"/>
+   </widget>
+   <widget class="QMenu" name="menuGerenciamento">
+    <property name="title">
+     <string>Gerenciamento</string>
+    </property>
+    <addaction name="actionGerir_Clientes"/>
+    <addaction name="actionGerir_Usu_rios"/>
+    <addaction name="actionGerir_Pre_rios"/>
+   </widget>
+   <widget class="QMenu" name="menuFinan_as">
+    <property name="title">
+     <string>Finanças</string>
+    </property>
+    <widget class="QMenu" name="menuVer_Rendimentos">
+     <property name="title">
+      <string>Ver Rendimentos</string>
+     </property>
+     <addaction name="actionRendimento_Geral"/>
+     <addaction name="actionRendimentos_dos_Funcion_rios"/>
+     <addaction name="actionRendimento_dos_Clientes"/>
+    </widget>
+    <addaction name="menuVer_Rendimentos"/>
+    <addaction name="separator"/>
+    <addaction name="actionFecho_de_Caixa"/>
+   </widget>
+   <widget class="QMenu" name="menuLaveMax">
+    <property name="title">
+     <string>Programa</string>
+    </property>
+    <addaction name="actionTerminar_Sess_o"/>
+    <addaction name="separator"/>
+    <addaction name="actionFechar_o_Programa"/>
+   </widget>
+   <widget class="QMenu" name="menuFerramentas">
+    <property name="title">
+     <string>Ferramentas e Ajuda</string>
+    </property>
+    <addaction name="actionSettings"/>
+    <addaction name="separator"/>
+    <addaction name="actionManual"/>
+    <addaction name="separator"/>
+    <addaction name="actionSobre_o_Programa"/>
+    <addaction name="actionSobre_Qt"/>
+   </widget>
+   <addaction name="menuLaveMax"/>
+   <addaction name="menuEntry"/>
+   <addaction name="menuGerenciamento"/>
+   <addaction name="menuFinan_as"/>
+   <addaction name="menuFerramentas"/>
+  </widget>
+  <action name="NewEntryAction">
+   <property name="icon">
+    <iconset resource="../Resources/resources.qrc">
+     <normaloff>:/icons/new-entry.png</normaloff>:/icons/new-entry.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nova Fatura</string>
+   </property>
+   <property name="toolTip">
+    <string>Nova Entrada</string>
+   </property>
+  </action>
+  <action name="VisualizeEntryAction">
+   <property name="icon">
+    <iconset resource="../Resources/resources.qrc">
+     <normaloff>:/icons/visualize-entry.png</normaloff>:/icons/visualize-entry.png</iconset>
+   </property>
+   <property name="text">
+    <string>Visualizar Fatura</string>
+   </property>
+  </action>
+  <action name="ManageClientsAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Resources/resources.qrc">
+     <normaloff>:/icons/manage-clients.png</normaloff>:/icons/manage-clients.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gerir Clientes</string>
+   </property>
+  </action>
+  <action name="ManageUsersAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Resources/resources.qrc">
+     <normaloff>:/icons/manage-users.png</normaloff>:/icons/manage-users.png</iconset>
+   </property>
+   <property name="text">
+    <string>Gerir Usuários</string>
+   </property>
+  </action>
+  <action name="VisualizeEarningsAction">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Resources/resources.qrc">
+     <normaloff>:/icons/financial-report.png</normaloff>:/icons/financial-report.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ver Rendimentos</string>
+   </property>
+  </action>
+  <action name="TodayFinancialReportAction">
+   <property name="icon">
+    <iconset resource="../Resources/resources.qrc">
+     <normaloff>:/icons/today-financial-report.png</normaloff>:/icons/today-financial-report.png</iconset>
+   </property>
+   <property name="text">
+    <string>Fecho de Caixa</string>
+   </property>
+  </action>
+  <action name="actionNova_Entrada">
+   <property name="text">
+    <string>Nova Fatura</string>
+   </property>
+  </action>
+  <action name="actionVisualizar_Entrada">
+   <property name="text">
+    <string>Visualizar Fatura</string>
+   </property>
+  </action>
+  <action name="actionGerir_Clientes">
+   <property name="text">
+    <string>Gerir Clientes</string>
+   </property>
+  </action>
+  <action name="actionGerir_Usu_rios">
+   <property name="text">
+    <string>Gerir Usuários</string>
+   </property>
+  </action>
+  <action name="actionGerir_Pre_rios">
+   <property name="text">
+    <string>Gerir Preçário</string>
+   </property>
+  </action>
+  <action name="actionRendimentos_dos_Funcion_rios">
+   <property name="text">
+    <string>Rendimento dos Funcionários</string>
+   </property>
+  </action>
+  <action name="actionRendimento_dos_Clientes">
+   <property name="text">
+    <string>Rendimento dos Clientes</string>
+   </property>
+  </action>
+  <action name="actionRendimento_Geral">
+   <property name="text">
+    <string>Rendimento Geral</string>
+   </property>
+  </action>
+  <action name="actionFecho_de_Caixa">
+   <property name="text">
+    <string>Fecho de Caixa</string>
+   </property>
+  </action>
+  <action name="actionTerminar_Sess_o">
+   <property name="text">
+    <string>Terminar Sessão</string>
+   </property>
+  </action>
+  <action name="actionFechar_o_Programa">
+   <property name="text">
+    <string>Fechar o Programa</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Configurações</string>
+   </property>
+  </action>
+  <action name="actionSobre_o_Programa">
+   <property name="text">
+    <string>Sobre o Programa</string>
+   </property>
+  </action>
+  <action name="actionSobre_Qt">
+   <property name="text">
+    <string>Sobre Qt</string>
+   </property>
+  </action>
+  <action name="actionManual">
+   <property name="text">
+    <string>Manual</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../Resources/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

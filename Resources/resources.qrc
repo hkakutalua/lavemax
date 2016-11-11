@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>financial-report.png</file>
+        <file>logo.png</file>
+        <file>manage-clients.png</file>
+        <file>manage-users.png</file>
+        <file>new-entry.png</file>
+        <file>today-financial-report.png</file>
+        <file>visualize-entry.png</file>
+    </qresource>
+    <qresource prefix="/scripts">
+        <file>Scripts/clothtreatment.sql</file>
+        <file>Scripts/clothtype.sql</file>
+        <file>Scripts/LaundryDatabase.sql</file>
+        <file>Scripts/servicetype.sql</file>
+        <file>Scripts/treatmenttype.sql</file>
+    </qresource>
+</RCC>
