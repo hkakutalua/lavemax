@@ -73,8 +73,10 @@ unsigned int DatabaseHelper::InsertReceipt(const Receipt &receipt,
     receiptQuery.bindValue(":ReceiptNumber", receipt.Number);
     receiptQuery.bindValue(":UserAccountId", receipt.UserAccountData.Id);
     receiptQuery.bindValue(":ClientId", clientId);
-    receiptQuery.bindValue(":RegistrationDate", receipt.RegistrationDateTime);
-    receiptQuery.bindValue(":DeliveryDate", receipt.DeliveryDateTime);
+    receiptQuery.bindValue(":RegistrationDate",
+                           receipt.RegistrationDateTime.toString("yyyy-MM-dd hh:mm"));
+    receiptQuery.bindValue(":DeliveryDate",
+                           receipt.DeliveryDateTime.toString("yyyy-MM-dd hh:mm"));
     if (!receiptQuery.exec()) {
         throw SplashException(receiptQuery.lastError().text()
                               + "\n" + receiptQuery.executedQuery(),
