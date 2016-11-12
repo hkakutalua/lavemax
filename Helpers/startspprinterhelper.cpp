@@ -54,9 +54,6 @@ unsigned int StarTSPPrinterHelper::printData(const QByteArray &data)
             dataWrittenSize += sizeCommunicated;
             noProgressCount = 0;
         }
-
-        // Save the earth... :-P
-        QApplication::processEvents();
     }
 
     ClosePort(port);
