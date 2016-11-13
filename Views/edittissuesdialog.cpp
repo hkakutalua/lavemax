@@ -474,7 +474,8 @@ QSqlQuery EditTissuesDialog::queryClothes(unsigned int serviceId)
 {
     QSqlQuery query;
     query.prepare("SELECT ClothTypeId, Name FROM ClothType"
-                  " WHERE ServiceTypeId = :ServiceTypeId");
+                  " WHERE ServiceTypeId = :ServiceTypeId"
+                  " AND IsActive = TRUE");
     query.bindValue(":ServiceTypeId", serviceId);
     if (!query.exec())
         throw SplashException(query.lastError().text() + "\n" +
