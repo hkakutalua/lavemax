@@ -8,11 +8,4 @@
         <file>today-financial-report.png</file>
         <file>visualize-entry.png</file>
     </qresource>
-    <qresource prefix="/scripts">
-        <file>Scripts/clothtreatment.sql</file>
-        <file>Scripts/clothtype.sql</file>
-        <file>Scripts/LaundryDatabase.sql</file>
-        <file>Scripts/servicetype.sql</file>
-        <file>Scripts/treatmenttype.sql</file>
-    </qresource>
 </RCC>
