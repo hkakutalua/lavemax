@@ -20,8 +20,8 @@ SelectDateTimeDialog::SelectDateTimeDialog(QWidget *parent) :
     QDate deliveryDate = todayDate.addDays(1);
     ui->calendarWidget->setSelectedDate(deliveryDate);
 
-    // Delivery is predefined for the current hour
-    ui->timeEdit->setTime(QTime::currentTime());
+    // Delivery is predefined for the 17:00
+    ui->timeEdit->setTime(QTime(17,0));
 
     changeDescriptiveDateLabel();
     connect(ui->calendarWidget, SIGNAL(clicked(QDate)),

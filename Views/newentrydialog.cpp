@@ -10,7 +10,7 @@ NewEntryDialog::NewEntryDialog(QWidget *parent) :
 
     _classTag            = this->metaObject()->className();
     _receiptNumber       = getNextReceiptNumber();
-    _deliveryDateTime    = QDateTime::currentDateTime().addDays(1);
+    _deliveryDateTime    = QDateTime(QDate::currentDate(), QTime(17,0)).addDays(1);
     _deliveryDateTimeStr = DateTimeHelper::
                            GetDescriptiveTextFor(_deliveryDateTime);
 
