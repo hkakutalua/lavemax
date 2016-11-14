@@ -245,12 +245,10 @@ void VisualizeReceiptDialog::updateReceiptPaymUi()
     switch (_receipt.PaymentKind) {
         case CompletePayment:
             paymTypeTxt = "Pagamento Completo";
-            ui->CompletePaymButton->setEnabled(false);
             break;
 
         case PartialPayment:
             paymTypeTxt = "Pagamento Parcial";
-            ui->CompletePaymButton->setEnabled(true);
             break;
     }
 
