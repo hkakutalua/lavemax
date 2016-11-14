@@ -16,27 +16,31 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
         "------------------------------------------------"
         + CancelEmphPrinting + "\n";
 
-    QString paymentTypeStr;
-    paymentTypeStr = (receipt.PaymentKind == CompletePayment)
-                     ? "Pagamento Completo" : "Pagamento Parcial";
-
-    QString tempStr = QString(
+    QString tempStr =
         SetEmphPrinting +
         CenterAlignment +
         "\nLAVANDARIA LAVEMAX\n\n" +
+        CancelEmphPrinting;
+
+    if (receipt.PaymentKind == PartialPayment) {
+        tempStr += LeftAlignment + SetEmphPrinting + SetExpansion3x+
+            "PP\n" +
+            CancelExpansion + CancelEmphPrinting;
+    }
+
+    tempStr += QString(
+        SetEmphPrinting +
         LeftAlignment +
-        "Fatura nº %L1\n"
-        "Data de Registo: %L2\n"
-        "Data de Entrega: %L3\n"
-        "Cliente: %4\n"
-        "Funcionario(a): %5\n"
-        "%6\n" +
+        "FATURA nº %L1\n"
+        "DATA DE REGISTO: %L2\n"
+        "DATA DE ENTREGA: %L3\n"
+        "CLIENTE: %4\n"
+        "FUNCIONÁRIO(a): %5\n" +
         CancelEmphPrinting
     ).arg(receipt.Number)
      .arg(receipt.RegistrationDateTime.toString("dd-MM-yyyy hh:mm"))
      .arg(receipt.DeliveryDateTime.toString("dd-MM-yyyy hh:mm"))
-     .arg(receipt.ClientData.Name, receipt.UserAccountData.Name)
-     .arg(paymentTypeStr);
+     .arg(receipt.ClientData.Name, receipt.UserAccountData.Name);
 
     // ---------------------------------------------- //
     //  Peça: Peça XXXX                               //
@@ -49,10 +53,12 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
             "Tratamento: %2\n"
             "Preço: %L3 Kz(s)\n"
             "Marca: %4\n"
-            "Detalhes: %5; %6;"
+            "Detalhes: %5; %6;\n"
+            "Urgência: %7%"
         ).arg(cloth.ClothKind.Name, cloth.TreatmentKind.Name)
          .arg(cloth.PriceCharged)
-         .arg(cloth.Brand, cloth.Color, cloth.Observations);
+         .arg(cloth.Brand, cloth.Color, cloth.Observations)
+         .arg(cloth.Urgency);
     }
     tempStr += separator + "\n";
 

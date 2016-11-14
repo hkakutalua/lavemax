@@ -22,8 +22,10 @@ namespace StarTSPPrinterType {
     // Emphasized Printing Codes
     const QString SetEmphPrinting     {"\x1b\x45"};
     const QString CancelEmphPrinting  {"\x1b\x46"};
-    const QString SetUnderlineMode    {"\x1b\x2d\x48"};
-    const QString CancelUnderlineMode {"\x1b\x2d\x0"};
+
+    //
+    const QString SetExpansion3x      {"\x1b\x69\x2\x2"};
+    const QString CancelExpansion     {"\x1b\x69\x30\x30"};
 
     // Cut command code
     const QString CutCommand          {"\x1b\x64\x02"};
