@@ -35,12 +35,14 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
         "DATA DE REGISTO: %L2\n"
         "DATA DE ENTREGA: %L3\n"
         "CLIENTE: %4\n"
-        "FUNCIONÁRIO(a): %5\n" +
+        "TELEMÓVEL: %5\n"
+        "FUNCIONÁRIO(a): %6\n" +
         CancelEmphPrinting
     ).arg(receipt.Number)
      .arg(receipt.RegistrationDateTime.toString("dd-MM-yyyy hh:mm"))
      .arg(receipt.DeliveryDateTime.toString("dd-MM-yyyy hh:mm"))
-     .arg(receipt.ClientData.Name, receipt.UserAccountData.Name);
+     .arg(receipt.ClientData.Name, receipt.ClientData.PhoneNumber)
+     .arg(receipt.UserAccountData.Name);
 
     // ---------------------------------------------- //
     //  Peça: Peça XXXX                               //
@@ -75,11 +77,32 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
         RightAlignment +
         "Total a Pagar: %L1 Kz(s)\n" +
         "Total Pago: %L2 Kz(s)\n" +
-        "Valores em Falta: %L3 Kz(s)\n" +
+        "Valores em Falta: %L3 Kz(s)" +
+        separator +
         CancelEmphPrinting
         ).arg(receipt.TotalToPayNet)
          .arg(totalPayed)
          .arg(missingPayment);
+
+    // Print company info
+    const QString address = "Cacuaco - Bairro das Salinas"
+                            " - Rua direita da Vila de Cacuaco";
+    const QString email   = "lave.max2015@gmail.com";
+    const QString nif     = "5417381349";
+    const uint    phone1  = 924477500;
+    const uint    phone2  = 994477500;
+    tempStr += QString(
+        CenterAlignment +
+        "%1\n"
+        "Terminais: %L2 \ %L3\n"
+        "Email: %4 - NIF: %5\n\n"
+        + SetEmphPrinting +
+        "TEMOS REGRAS DA CASA\n"
+        + CancelEmphPrinting
+        ).arg(address)
+         .arg(phone1)
+         .arg(phone2)
+         .arg(email, nif);
 
     // In the end...
     tempStr += CutCommand;
