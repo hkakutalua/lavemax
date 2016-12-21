@@ -23,7 +23,7 @@ QString ReportPrintHelper::prepareReceiptData(const QList<Receipt> &receipts)
         "\nLAVANDARIA LAVEMAX\nFECHO DE CAIXA\n\n" +
         LeftAlignment +
         "DATA E HORA: %L1\n"
-        "IMPRESSO POR: %2\n\n" +
+        "FUNCIONÁRIO(A): %2\n\n" +
         CancelEmphPrinting
         ).arg(QDateTime::currentDateTime().toString("dd-MM-yyyy hh:mm"))
          .arg(UserSessionHelper::GetInstance().GetLoggedUser().Name);

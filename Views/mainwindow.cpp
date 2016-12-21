@@ -76,8 +76,15 @@ void MainWindow::openManageUsersDialog()
 
 void MainWindow::openFinancialReportDialog()
 {
-    FinancialReportDialog dialog = FinancialReportDialog(this);
-    dialog.exec();
+//    FinancialReportDialog dialog = FinancialReportDialog(this);
+//    dialog.exec();
+    try {
+        UserSessionHelper::GetInstance().PrintUserFinancialReport();
+    }
+    catch (const SplashException &e) {
+        ErrorHelper::GetInstance()
+            .SaveAndShowError(e.Tag(), e.Level(), e.What());
+    }
 }
 
 void MainWindow::openSettingsDialog()
