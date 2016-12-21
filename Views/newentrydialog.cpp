@@ -10,9 +10,7 @@ NewEntryDialog::NewEntryDialog(QWidget *parent) :
 
     _classTag            = this->metaObject()->className();
     _receiptNumber       = getNextReceiptNumber();
-    _deliveryDateTime    = QDateTime(QDate::currentDate(), QTime(17,0)).addDays(1);
-    _deliveryDateTimeStr = DateTimeHelper::
-                           GetDescriptiveTextFor(_deliveryDateTime);
+    configureDefaultDeliveryDate();
 
     ui->PartPaymAmountSpinBox->setRange(_minPartPaymValue, _maxPartPaymValue);
     updateAllUi();
@@ -84,8 +82,44 @@ void NewEntryDialog::updateClothesData(QList<Cloth> clothes)
     for (auto cloth : _clothList)
         _clothesPriceSum += cloth.PriceCharged;
 
+    configureDefaultDeliveryDate();
     updateClothesUi();
     updatePaymentData();
+}
+
+void NewEntryDialog::configureDefaultDeliveryDate()
+{
+    UrgencyLevel deliveryUrgency = NormalLevel;
+    for (Cloth cloth : _clothList) {
+        if (cloth.Urgency == MediumLevel) {
+            deliveryUrgency = MediumLevel;
+        }
+        else if (cloth.Urgency == HighLevel) {
+            deliveryUrgency = HighLevel;
+            break;
+        }
+    }
+
+    switch (deliveryUrgency) {
+        case NormalLevel:
+            _deliveryDateTime = QDateTime(QDate::currentDate(), QTime(17,0)).addDays(2);
+            break;
+
+        case MediumLevel:
+            _deliveryDateTime = QDateTime(QDate::currentDate(), QTime(17,0)).addDays(1);
+            break;
+
+        case HighLevel:
+            _deliveryDateTime = QDateTime(QDate::currentDate(), QTime(17,0));
+            break;
+    }
+
+    if (_deliveryDateTime.date().dayOfWeek() == Qt::Sunday)
+        _deliveryDateTime.addDays(1);
+
+    _deliveryDateTimeStr = DateTimeHelper::
+                           GetDescriptiveTextFor(_deliveryDateTime);
+    updateDateUi();
 }
 
 void NewEntryDialog::updateDateTimeData(QDateTime dateTime, QString text)

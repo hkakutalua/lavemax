@@ -47,6 +47,7 @@ private slots:
     void updateClothesData(QList<DatabaseType::Cloth> clothes);
 
     // Update the delivery field(s) data
+    void configureDefaultDeliveryDate();
     void updateDateTimeData(QDateTime dateTime, QString text);
 
     // Update urgency's field data
