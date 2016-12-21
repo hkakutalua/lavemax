@@ -32,6 +32,8 @@ private:
     UserSessionHelper(const UserSessionHelper&);
     const UserSessionHelper& operator=(const UserSessionHelper&);
 
+    void insertLoginRegistry() const;
+
     QString _classTag {"UserSessionHelper"};
 
     DatabaseType::UserAccount   _userAccount;

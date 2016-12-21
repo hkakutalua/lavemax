@@ -36,6 +36,16 @@ bool UserSessionHelper::LoginUser(const QString &login, const QString &password)
     else if(privilegeLevelTxt == "user")
         _userAccount.Level = User;
 
+    try {
+        insertLoginRegistry();
+    }
+    catch (const SplashException &e) {
+        ErrorHelper::GetInstance()
+            .SaveAndShowError(e.Tag(), e.Level(), e.What());
+        LogoffUser();
+        return false;
+    }
+
     _loginState = UserLogged;
     return true;
 }
@@ -56,4 +66,20 @@ UserAccount UserSessionHelper::GetLoggedUser() const
 LoginState UserSessionHelper::GetLoginState() const
 {
     return _loginState;
+}
+
+void UserSessionHelper::insertLoginRegistry() const
+{
+    if (_userAccount.Id <= 0)
+        return;
+
+    QSqlQuery query;
+    query.prepare("INSERT INTO LoginRegistry(UserAccountId, LoginDate)"
+                  " VALUES(:UserAccountId, :LoginDate)");
+    query.bindValue(":UserAccountId", _userAccount.Id);
+    query.bindValue(":LoginDate", QDateTime::currentDateTime().toString("yyyy-MM-dd  hh:mm:ss"));
+    if (!query.exec()) {
+        throw SplashException(query.lastError().text(),
+                              _classTag, ErrorHelperType::CriticalError);
+    }
 }
