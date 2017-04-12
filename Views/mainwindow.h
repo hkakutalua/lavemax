@@ -11,6 +11,7 @@
 #include "Views/financialreportdialog.h"
 #include "Views/visualizereceiptdialog.h"
 #include "Views/settingsdialog.h"
+#include "Views/managepricesdialog.h"
 #include "Helpers/databasehelper.h"
 #include "Helpers/usersessionhelper.h"
 #include <QDebug>
@@ -45,6 +46,7 @@ private slots:
     void openManageClientsDialog();
     void openManageUsersDialog();
     void openFinancialReportDialog();
+    void openManagePricesDialog();
     void updateSearchCriteria();
     void updateReceiptTableView();
 

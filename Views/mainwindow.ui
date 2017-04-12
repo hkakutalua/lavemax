@@ -324,9 +324,9 @@ padding: 4px;</string>
    <addaction name="separator"/>
    <addaction name="ManageClientsAction"/>
    <addaction name="ManageUsersAction"/>
+   <addaction name="ManagePricesAction"/>
    <addaction name="separator"/>
    <addaction name="TodayFinancialReportAction"/>
-   <addaction name="VisualizeEarningsAction"/>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -438,7 +438,7 @@ padding: 4px;</string>
     <string>Gerir Usuários</string>
    </property>
   </action>
-  <action name="VisualizeEarningsAction">
+  <action name="ManagePricesAction">
    <property name="enabled">
     <bool>false</bool>
    </property>
@@ -447,7 +447,7 @@ padding: 4px;</string>
      <normaloff>:/icons/financial-report.png</normaloff>:/icons/financial-report.png</iconset>
    </property>
    <property name="text">
-    <string>Ver Rendimentos</string>
+    <string>Gerir Preçarios</string>
    </property>
   </action>
   <action name="TodayFinancialReportAction">

@@ -19,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
             this, SLOT(openVisualizeEntryDialog()));
     connect(ui->TodayFinancialReportAction, SIGNAL(triggered()),
             this, SLOT(openFinancialReportDialog()));
+    connect(ui->ManagePricesAction, SIGNAL(triggered(bool)),
+            this, SLOT(openManagePricesDialog()));
 
     connect(ui->actionSettings, SIGNAL(triggered()),
             this, SLOT(openSettingsDialog()));
@@ -85,6 +87,12 @@ void MainWindow::openFinancialReportDialog()
         ErrorHelper::GetInstance()
             .SaveAndShowError(e.Tag(), e.Level(), e.What());
     }
+}
+
+void MainWindow::openManagePricesDialog()
+{
+    ManagePricesDialog *dialog = new ManagePricesDialog(this);
+    dialog->exec();
 }
 
 void MainWindow::openSettingsDialog()
@@ -206,6 +214,14 @@ void MainWindow::showEvent(QShowEvent *e)
     auto user = UserSessionHelper::GetInstance().GetLoggedUser();
     ui->GreetingsLabel->setText(QString("Benvindo(a) %1.")
                                 .arg(user.Name));
+
+    auto &helper = UserSessionHelper::GetInstance();
+    if ((helper.GetLoginState() == UserSessionType::UserLogged) &&
+        (helper.GetLoggedUser().Level == DatabaseType::Administrator))
+    {
+        ui->ManagePricesAction->setEnabled(true);
+    }
+
     updateReceiptTableView();
 }
 

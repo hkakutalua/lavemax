@@ -35,7 +35,9 @@ SOURCES += main.cpp\
     Views/settingsdialog.cpp \
     Views/financialreportdialog.cpp \
     Helpers/reportprinthelper.cpp \
-    Helpers/usersessionhelper.cpp
+    Helpers/usersessionhelper.cpp \
+    Views/managepricesdialog.cpp \
+    Views/changesinglepricedialog.cpp
 
 HEADERS  += Exceptions/splashexception.h \
     Helpers/errorhelper.h \
@@ -58,7 +60,9 @@ HEADERS  += Exceptions/splashexception.h \
     Views/settingsdialog.h \
     Views/financialreportdialog.h \
     Helpers/reportprinthelper.h \
-    Helpers/usersessionhelper.h
+    Helpers/usersessionhelper.h \
+    Views/managepricesdialog.h \
+    Views/changesinglepricedialog.h
 
 FORMS    += Views/mainwindow.ui \
     Views/newentrydialog.ui \
@@ -71,7 +75,9 @@ FORMS    += Views/mainwindow.ui \
     Views/printreportdialog.ui \
     Views/logindialog.ui \
     Views/settingsdialog.ui \
-    Views/financialreportdialog.ui
+    Views/financialreportdialog.ui \
+    Views/managepricesdialog.ui \
+    Views/changesinglepricedialog.ui
 
 RESOURCES += \
     Resources/resources.qrc
