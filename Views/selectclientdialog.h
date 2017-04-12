@@ -32,7 +32,7 @@ class SelectClientDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SelectClientDialog(QWidget *parent = 0);
+    SelectClientDialog(QWidget *parent = 0);
     ~SelectClientDialog();
 
 signals:

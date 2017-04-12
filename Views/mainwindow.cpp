@@ -40,8 +40,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::openNewEntryDialog()
 {
-    NewEntryDialog dialog = NewEntryDialog(this);
-    dialog.exec();
+    NewEntryDialog *dialog = new NewEntryDialog(this);
+    dialog->exec();
     updateReceiptTableView();
 }
 
@@ -58,20 +58,20 @@ void MainWindow::openVisualizeEntryDialog()
     QModelIndex receiptIndex   = table->model()->index(currentRow, 0);
     unsigned int receiptNumber = receiptIndex.data().toUInt();
 
-    VisualizeReceiptDialog dialog = VisualizeReceiptDialog(receiptNumber, this);
-    dialog.exec();
+    VisualizeReceiptDialog *dialog = new VisualizeReceiptDialog(receiptNumber, this);
+    dialog->exec();
 }
 
 void MainWindow::openManageClientsDialog()
 {
-    ManageClientsDialog dialog = ManageClientsDialog(this);
-    dialog.exec();
+    ManageClientsDialog *dialog = new ManageClientsDialog(this);
+    dialog->exec();
 }
 
 void MainWindow::openManageUsersDialog()
 {
-    ManageUsersDialog dialog = ManageUsersDialog(this);
-    dialog.exec();
+    ManageUsersDialog *dialog = new ManageUsersDialog(this);
+    dialog->exec();
 }
 
 void MainWindow::openFinancialReportDialog()
@@ -89,8 +89,8 @@ void MainWindow::openFinancialReportDialog()
 
 void MainWindow::openSettingsDialog()
 {
-    SettingsDialog dialog = SettingsDialog(this);
-    dialog.exec();
+    SettingsDialog *dialog = new SettingsDialog(this);
+    dialog->exec();
 }
 
 void MainWindow::updateSearchCriteria()

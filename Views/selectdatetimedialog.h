@@ -13,7 +13,7 @@ class SelectDateTimeDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit SelectDateTimeDialog(QWidget *parent = 0);
+    SelectDateTimeDialog(QWidget *parent = 0);
     ~SelectDateTimeDialog();
 
 signals:

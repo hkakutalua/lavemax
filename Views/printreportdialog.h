@@ -15,7 +15,7 @@ class PrintReportDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit PrintReportDialog(QWidget *parent = 0);
+    PrintReportDialog(QWidget *parent = 0);
     ~PrintReportDialog();
 
 private slots:

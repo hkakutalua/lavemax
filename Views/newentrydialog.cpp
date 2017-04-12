@@ -45,10 +45,10 @@ void NewEntryDialog::setUpConnections()
 
 void NewEntryDialog::openSelectClientDialog()
 {
-    SelectClientDialog dialog = SelectClientDialog(this);
-    connect(&dialog, SIGNAL(ClientSelectionDone(DatabaseType::Client,bool)),
+    SelectClientDialog *dialog = new SelectClientDialog(this);
+    connect(dialog, SIGNAL(ClientSelectionDone(DatabaseType::Client,bool)),
             this, SLOT(updateClientData(DatabaseType::Client,bool)));
-    dialog.exec();
+    dialog->exec();
 }
 
 void NewEntryDialog::openEditTissuesDialog()
@@ -61,10 +61,10 @@ void NewEntryDialog::openEditTissuesDialog()
 
 void NewEntryDialog::openSelectDateTimeDialog()
 {
-    SelectDateTimeDialog dialog = SelectDateTimeDialog(this);
-    connect(&dialog, SIGNAL(DateTimeSelectionDone(QDateTime,QString)),
+    SelectDateTimeDialog *dialog = new SelectDateTimeDialog(this);
+    connect(dialog, SIGNAL(DateTimeSelectionDone(QDateTime,QString)),
             this, SLOT(updateDateTimeData(QDateTime,QString)));
-    dialog.exec();
+    dialog->exec();
 }
 
 void NewEntryDialog::updateClientData(Client client, bool registerClient)

@@ -12,7 +12,7 @@ class ManageUsersDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ManageUsersDialog(QWidget *parent = 0);
+    ManageUsersDialog(QWidget *parent = 0);
     ~ManageUsersDialog();
 
 private:
