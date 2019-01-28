@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Lavandaria Lavemax</string>
+   <string>Lavandaria Art Lar</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../Resources/resources.qrc">
@@ -77,31 +77,6 @@
            <pixmap resource="../Resources/resources.qrc">:/icons/logo.png</pixmap>
           </property>
           <property name="scaledContents">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: #d1d1d1;
-border: 2px solid #adadad;
-border-radius: 2px;
-padding: 4px;</string>
-          </property>
-          <property name="text">
-           <string>LAVEMAX</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
            <bool>true</bool>
           </property>
          </widget>

@@ -11,6 +11,8 @@ void ReceiptPrinterHelper::PrintReceipt(const Receipt &receipt, bool printDuplic
 
 QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool printDuplicate)
 {
+    const QString companyName = "LAVANDARIA ART LAR";
+
     //
     const QString separator = "\n" + SetEmphPrinting +
         "------------------------------------------------"
@@ -18,8 +20,8 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
 
     QString tempStr =
         SetEmphPrinting +
-        CenterAlignment +
-        "\nLAVANDARIA LAVEMAX\n\n" +
+        CenterAlignment + "\n" +
+        companyName + "\n\n" +
         CancelEmphPrinting;
 
     if (receipt.PaymentKind == PartialPayment) {
@@ -85,6 +87,7 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
          .arg(missingPayment);
 
     // Print company info
+    /*
     const QString address = "Cacuaco - Bairro das Salinas"
                             " - Rua direita da Vila de Cacuaco";
     const QString email   = "lave.max2015@gmail.com";
@@ -103,6 +106,7 @@ QString ReceiptPrinterHelper::prepareReceiptData(const Receipt &receipt, bool pr
          .arg(phone1)
          .arg(phone2)
          .arg(email, nif);
+    */
 
     // In the end...
     tempStr += CutCommand;

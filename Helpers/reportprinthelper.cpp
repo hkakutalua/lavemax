@@ -13,14 +13,16 @@ void ReportPrintHelper::PrintReport(const QList<Receipt> &receipts)
 
 QString ReportPrintHelper::prepareReceiptData(const QList<Receipt> &receipts)
 {
+    const QString companyName = "LAVANDARIA ART LAR";
+
     const QString separator = "\n"
         + SetEmphPrinting +
         "------------------------------------------------"
         + CancelEmphPrinting + "\n";
 
     const QString header = QString(
-        SetEmphPrinting + CenterAlignment +
-        "\nLAVANDARIA LAVEMAX\nFECHO DE CAIXA\n\n" +
+        SetEmphPrinting + CenterAlignment + "\n" + companyName +
+        "\nFECHO DE CAIXA\n\n" +
         LeftAlignment +
         "DATA E HORA: %L1\n"
         "FUNCIONÁRIO(A): %2\n\n" +
