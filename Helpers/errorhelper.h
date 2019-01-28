@@ -51,7 +51,6 @@
 #include <QDateTime>
 #include <QTextStream>
 #include <QDebug>
-#include "appdatadirhelper.h"
 
 namespace ErrorHelperType{
     enum ErrorLevel

@@ -1,6 +1,3 @@
-#ifndef APPDATADIRECTORY_H
-#define APPDATADIRECTORY_H
-
 /*
  * Author: Henrick Pedro Kakutalwa
  * Date: 17/03/2016
@@ -18,6 +15,9 @@
  * -------------------------------------------------------------------------------------
  *
 */
+
+#ifndef APPDATADIRHELPER_H
+#define APPDATADIRHELPER_H
 
 #include <QString>
 #include <QDir>

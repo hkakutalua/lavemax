@@ -1,4 +1,5 @@
 #include "errorhelper.h"
+#include "appdatadirhelper.h"
 
 using namespace ErrorHelperType;
 

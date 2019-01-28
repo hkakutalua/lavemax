@@ -28,7 +28,7 @@ void StarTSPPrinterHelper::Print(const QString &data)
 
 unsigned int StarTSPPrinterHelper::printData(const QByteArray &data)
 {
-    void *port = OpenPort(_portName.toStdString().c_str(), "", 2000);
+    void *port = OpenPortA(_portName.toStdString().c_str(), "", 2000);
     if(port == NULL)
     {
         qDebug() << "Failed to open port!!";

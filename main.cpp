@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         database.setDatabaseName("lavemax");
         database.setHostName("localhost");
         database.setUserName("postgres");
-        database.setPassword("1996setembro23");
+        database.setPassword("admin128");
         if (!database.open()) {
             throw SplashException(database.lastError().text(),
                                   "Main - Database error",
