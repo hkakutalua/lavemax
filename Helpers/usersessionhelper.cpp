@@ -29,7 +29,7 @@ bool UserSessionHelper::LoginUser(const QString &login, const QString &password)
     _userAccount.Password = query.value(3).toString();
     _userAccount.IsActive = query.value(4).toBool();
 
-    const QString privilegeLevelTxt = query.value(5).toUInt();
+    const QString privilegeLevelTxt = query.value(5).toString();
     if (privilegeLevelTxt == "admin")
         _userAccount.Level = Administrator;
     else if (privilegeLevelTxt == "manager")
@@ -225,8 +225,8 @@ QSqlQuery UserSessionHelper::queryReceiptsBetween(QDateTime beginDate, QDateTime
         "  AND UserAccountId = :UserAccountId"
         " ORDER BY ReceiptNumber";
     query.prepare(queryTxt);
-    query.bindValue(":BeginDate", beginDate.toString("dd-MM-yyyy hh:mm"));
-    query.bindValue(":EndDate", endDate.toString("dd-MM-yyyy hh:mm"));
+    query.bindValue(":BeginDate", beginDate.toString("yyyy-MM-dd hh:mm"));
+    query.bindValue(":EndDate", endDate.toString("yyyy-MM-dd hh:mm"));
     query.bindValue(":UserAccountId", _userAccount.Id);
 
     if (!query.exec()) {
@@ -251,8 +251,8 @@ QSqlQuery UserSessionHelper::queryPaymentsBetween(QDateTime beginDate, QDateTime
         "  AND UserAccountId = :UserAccountId"
         " ORDER BY Payment.ReceiptNumber";
     query.prepare(queryTxt);
-    query.bindValue(":BeginDate", beginDate.toString("dd-MM-yyyy hh:mm"));
-    query.bindValue(":EndDate", endDate.toString("dd-MM-yyyy hh:mm"));
+    query.bindValue(":BeginDate", beginDate.toString("yyyy-MM-dd hh:mm"));
+    query.bindValue(":EndDate", endDate.toString("yyyy-MM-dd hh:mm"));
     query.bindValue(":UserAccountId", _userAccount.Id);
 
     if (!query.exec()) {
