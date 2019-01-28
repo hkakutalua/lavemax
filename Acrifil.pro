@@ -81,3 +81,5 @@ FORMS    += Views/mainwindow.ui \
 
 RESOURCES += \
     Resources/resources.qrc
+
+RC_FILE = app.rc

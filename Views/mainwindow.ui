@@ -237,11 +237,7 @@ padding: 4px;</string>
         <item>
          <widget class="QTableView" name="ReceiptTableView">
           <property name="styleSheet">
-           <string notr="true">QTableView {
-	border: no-border;
-	background: url(:/icons/logo.png) no-repeat center;
-	background-attachment: fixed;
-}</string>
+           <string notr="true"/>
           </property>
           <property name="selectionMode">
            <enum>QAbstractItemView::SingleSelection</enum>
